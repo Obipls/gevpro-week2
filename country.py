@@ -8,10 +8,20 @@ class Country:
 	def __init__(self,country):
 		self.country=country
 
+
 	def __str__(self):
-		return " Hello from {}".format(self.country)
+		return "Hello from {}".format(self.country)
 
 
-if __name__ == '__main__':
-	country=Country("Nederland")
-	print(country)
+def readText():
+	countryList=[]
+	infile=open("countries_list.txt")
+	for line in infile:
+		countryList.append(Country(line))
+	return countryList
+
+
+
+if __name__ == "__main__":
+	readText()
+
