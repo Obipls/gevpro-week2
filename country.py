@@ -1,17 +1,17 @@
 # #!/usr/bin/env python
 # country.py
 # Olivier Louwaars s2814714
-# 6-2-2015
+# 12-2-2015
 
-import sys
+class Country:
+	
+	def __init__(self,country):
+		self.country=country
+
+	def __str__(self):
+		return " Hello from {}".format(self.country)
 
 
-
-class Country():
-	
-	
-def main():
-	
-	
 if __name__ == '__main__':
-	main()
+	country=Country("Nederland")
+	print(country)
