@@ -12,37 +12,35 @@ class FlagUI(QtGui.QWidget):
         self.initUI()
         
     def initUI(self):
-        self.lbl = QtGui.QLabel("Selecteer een land", self)
-        self.lbl.move(50, 20)
+        text = QtGui.QLabel("Selecteer een land", self)
         countryPicker=QtGui.QComboBox(self)
         cList=readText()
-        for c in cList:
-			self.flag=Country.countryFlag(c)
-			self.name=str(Country(c))
-			self.name.strip()
-			countryPicker.addItem(self.name)
+        for self.c in cList:
+            self.name=str(Country(self.c)).strip()
+            countryPicker.addItem(self.name)
 			
-        countryPicker.move(50,60)
         countryPicker.activated.connect(self.onActivated)        
          
-        self.setGeometry(300, 300, 300, 200)
+        self.setGeometry(200, 200, 100, 150)
         self.setWindowTitle('Country Picker')
         self.show()
         
         self.hbox = QtGui.QHBoxLayout()
-        self.hbox.addStretch(1)
+        self.flagDisplay=QtGui.QFrame(self)
+        self.flagDisplay.setFrameShape(QtGui.QFrame.StyledPanel)
+        self.hbox.addWidget(text)
         self.hbox.addWidget(countryPicker)
+        
 
         self.vbox = QtGui.QVBoxLayout()
-        self.vbox.addStretch(1)
         self.vbox.addLayout(self.hbox)
-        
-        self.setLayout(self.vbox) 
+        self.setLayout(self.vbox)
+        self.vbox.addWidget(self.flagDisplay)
+
         
     def onActivated(self, text):
-      self.flagDisplay=QtGui.QFrame(self)
-      self.hbox.addWidget(self.flagDisplay)
-      self.flagDisplay.setStyleSheet("QFrame { background-color: %s }" % self.flag)
+        self.flag=Country.countryFlag(self.c)
+        self.flagDisplay.setStyleSheet("QFrame { background-color: %s }" % self.flag.name())
 
       
 

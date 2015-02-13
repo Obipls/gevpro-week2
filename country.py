@@ -26,11 +26,7 @@ def readText():
 		countryList.append(Country(line))
 	return countryList
 
-if __name__ == "__main__":
-	cList=readText()
-	for c in cList:
-		flag=Country.countryFlag(c)
-		name=Country(c)
+
 
 		
 		

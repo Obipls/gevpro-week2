@@ -17,7 +17,6 @@ class FlagColor(QtGui.QColor):
 		self.setRed(randrange(255))
 		self.setBlue(randrange(255))
 		self.setGreen(randrange(255))
-		return self.red(),self.green(),self.blue()
 		
 
 if __name__ == '__main__':
