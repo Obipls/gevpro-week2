@@ -13,11 +13,9 @@ class Country:
 	def countryFlag(self):
 		color=FlagColor()
 		return color
-				
-
+		
 	def __str__(self):
 		return "{}".format(self.country)
-
 
 def readText():
 	countryList=[]

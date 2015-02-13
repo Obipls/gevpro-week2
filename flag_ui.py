@@ -20,10 +20,6 @@ class FlagUI(QtGui.QWidget):
             countryPicker.addItem(self.name)
 			
         countryPicker.activated.connect(self.onActivated)        
-         
-        self.setGeometry(200, 200, 100, 150)
-        self.setWindowTitle('Country Picker')
-        self.show()
         
         self.hbox = QtGui.QHBoxLayout()
         self.flagDisplay=QtGui.QFrame(self)
@@ -37,15 +33,19 @@ class FlagUI(QtGui.QWidget):
         self.setLayout(self.vbox)
         self.vbox.addWidget(self.flagDisplay)
 
+        self.setGeometry(200, 200, 100, 150)
+        self.setWindowTitle('Country Picker')
+        self.show()
+
         
     def onActivated(self, text):
         self.flag=Country.countryFlag(self.c)
-        self.flagDisplay.setStyleSheet("QFrame { background-color: %s }" % self.flag.name())
+        self.flagDisplay.setStyleSheet("QFrame{background-color:%s}"%self.flag.name())
 
       
 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
-    ex = FlagUI()
+    flagfinder = FlagUI()
     sys.exit(app.exec_())
 	
