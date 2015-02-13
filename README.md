@@ -1,6 +1,2 @@
-# gevpro-week2
-Olivier Louwaars, s2814714
-
-Opdrachten gevorderd programmeren week 2
-In deze readme staat vanalles en nogwat
-en nu nog meer
+# LeOlouvelo
+De opdrachten van Leonardo Losno Velozo(S1668501) en Olivier Louwaars(S2814714)
